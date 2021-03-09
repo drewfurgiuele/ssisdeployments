@@ -10,7 +10,7 @@ foreach ($p in $Projects) {
     $ProjectFullName = $p.fullname
     Write-Host $ProjectFullName
     $Command = "devenv `"$SolutionFulleName`" /ReBuild Development /Project `"$ProjectFullName`""
-    Write-Host $Command
+    & $Command
     Invoke-Command $Command
     
 }
