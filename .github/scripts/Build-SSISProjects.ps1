@@ -1,12 +1,16 @@
 $Workspace = $env:GITHUB_WORKSPACE
+$Solution = Get-ChildItem -Path "$Workspace\*"  | Where-Object {$_.Extension -eq ".sln"}
 $Projects = Get-ChildItem -Path "$Workspace\*\*"  | Where-Object {$_.Extension -eq ".dtproj"}
 
 Write-Host $Workspace
 
+
 foreach ($p in $Projects) {
+    $SolutionFulleName = $Solution.FullName
     $ProjectFullName = $p.fullname
     Write-Host $ProjectFullName
-    #$Command = "devenv `"C:\Users\drew.BOATMURDER\source\repos\SampleSSISProject\SampleSSISProject.sln`" /ReBuild Development /Project `"C:\Users\drew.BOATMURDER\source\repos\SampleSSISProject\SampleSSISProject\SampleSSISProject.dtproj`""
-    #Write-Host $Command
+    $Command = "devenv `"$SolutionFulleName`" /ReBuild Development /Project `"$ProjectFullName`""
+    Write-Host $Command
+    Invoke-Command $Command
     
 }
