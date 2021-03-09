@@ -1,6 +1,8 @@
 $Workspace = $env:GITHUB_WORKSPACE
 $Projects = Get-ChildItem -Path "$Workspace\*\*"  | Where-Object {$_.Extension -eq ".dtproj"}
 
+Write-Host $Workspace
+
 foreach ($p in $Projects) {
     $ProjectFullName = $p.fullname
     Write-Host $ProjectFullName
