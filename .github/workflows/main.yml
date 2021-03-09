@@ -28,5 +28,14 @@ jobs:
       - name: Run build script
         run: ./.github/scripts/Build-SSISProjects.ps1
         shell: powershell
+    
+  deploy:
+    runs-on: [self-hosted, ssis, x64]
+
+    steps:
+      - name: Deploy SSIS Packages
+        run: ./.github/scripts/Deploy-SSISProjects.ps1
+        shell: powershell
+
 
 
