@@ -6,7 +6,7 @@ foreach ($p in $Projects) {
     $SolutionFulleName = $Solution.FullName
     $ProjectFullName = $p.fullname
     $Command = "`"C:\Program Files (x86)\Microsoft Visual Studio\2017\SQL\Common7\IDE\devenv.exe`" `"$SolutionFulleName`" /ReBuild Development /Project `"$ProjectFullName`""
-
+    Write-Host $Command
     & $Command
     
 }
