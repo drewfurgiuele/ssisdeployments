@@ -9,7 +9,7 @@ foreach ($p in $Projects) {
     $SolutionFulleName = $Solution.FullName
     $ProjectFullName = $p.fullname
     Write-Host $ProjectFullName
-    $Command = "devenv `"$SolutionFulleName`" /ReBuild Development /Project `"$ProjectFullName`""
+    $Command = "C:\Program Files (x86)\Microsoft Visual Studio\2017\SQL\Common7\IDE\devenv.exe `"$SolutionFulleName`" /ReBuild Development /Project `"$ProjectFullName`""
     
     Start-Process -FilePath $Command -Wait
     
