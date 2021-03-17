@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SampleCopy"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{CBC897F4-0FE0-4FEF-AC9F-07369CD248E9}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{11E77D75-47A3-4CD3-A4CA-79932726DE6C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -632,7 +632,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{9B0B1368-8E7C-40D8-8490-942462BF7D31}"
-          SQLTask:SqlStatementSource="--Simple Comment&#xA;TRUNCATE TABLE [dbo].[Person_Archive]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[Person_Archive]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
